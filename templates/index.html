@@ -1,0 +1,36 @@
+{{define "index"}}
+<!DOCTYPE html>
+<html lang="en">
+{{template "head" .}}
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+
+    {{template "nav" .}}
+
+    <main class="flex-1 max-w-3xl mx-auto px-6 py-12 w-full">
+
+        <section class="mb-12">
+            <h1 class="text-4xl font-bold text-slate-900 mb-3">Hi, I'm Louis.</h1>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                Software developer and animal lover exploring life.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="text-xl font-semibold text-slate-800 mb-5">Projects</h2>
+            <div class="flex flex-col gap-4">
+                {{range .Projects}}
+                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all">
+                    <h3 class="font-semibold text-slate-900 mb-1">{{.Name}}</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">{{.Description}}</p>
+                </div>
+                {{end}}
+            </div>
+        </section>
+
+    </main>
+
+    {{template "footer" .}}
+
+</body>
+</html>
+{{end}}
