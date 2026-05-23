@@ -14,7 +14,7 @@ type Project struct {
 var projects = []Project{
 	{
 		Name:        "Personal Website",
-		Description: "Toy site to host personal content, built with Flask and Gin.",
+		Description: "Website to host personal content and projects.",
 	},
 	{
 		Name:        "Music Generating Neural Network",
