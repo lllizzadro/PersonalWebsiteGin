@@ -1,0 +1,42 @@
+{{define "guestbook"}}
+<!DOCTYPE html>
+<html lang="en">
+{{template "head" .}}
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+
+    {{template "nav" .}}
+
+    <main class="flex-1 max-w-3xl mx-auto px-6 py-12 w-full">
+
+        <form method="POST" action="/guestbook">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors">Sign Guestbook</button>
+        </form>
+
+        <table class="w-full">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Message</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range .Messages}}
+                <tr>
+                    <td>{{.Name}}</td>
+                    <td>{{.Message}}</td>
+                    <td>{{.Timestamp.Format "Jan 2, 2006 3:04 PM"}}</td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+        
+    </main>
+
+    {{template "footer" .}}
+</body>
+</html>
+
+{{end}}
