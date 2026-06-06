@@ -1,0 +1,26 @@
+{{define "dice"}}
+<!DOCTYPE html>
+<html lang="en">
+{{template "head" .}}
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+
+    {{template "nav" .}}
+
+    <main class="flex-1 max-w-3xl mx-auto px-6 py-12 w-full">
+
+        Number of Dice <input type="number" id="count" value="1" min="1" max="5" required><br>
+        Number of Sides <input type="number" id="sides" value="6" min="1" max="100" required><br>
+        <button type="button" id="roll-btn" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors">Roll</button>
+        
+        <div id="results" class="whitespace-pre-line"></div>
+        
+
+    </main>
+
+    {{template "footer" .}}
+    
+    <script src="/static/js/dice.js" defer></script>
+</body>
+
+</html>
+{{end}}

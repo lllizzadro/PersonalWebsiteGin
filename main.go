@@ -67,6 +67,12 @@ func main() {
 		})
 	})
 
+	router.GET("/dice", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "dice", gin.H{
+			"Title": "Dice",
+		})
+	})
+
 	router.POST("/guestbook", func(c *gin.Context) {
 		name := c.PostForm("name")
 		message := c.PostForm("message")
