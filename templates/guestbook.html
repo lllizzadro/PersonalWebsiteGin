@@ -1,13 +1,15 @@
 {{define "guestbook"}}
 <!DOCTYPE html>
 <html lang="en">
+
 {{template "head" .}}
+
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
 
     {{template "nav" .}}
 
     <main class="flex-1 max-w-3xl mx-auto px-6 py-12 w-full">
-
+        
         <form method="POST" action="/guestbook">
             <input type="text" name="name" placeholder="Your Name" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
@@ -32,11 +34,13 @@
                 {{end}}
             </tbody>
         </table>
-        
+
     </main>
 
     {{template "footer" .}}
+    
 </body>
+
 </html>
 
 {{end}}
