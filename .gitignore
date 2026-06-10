@@ -1,0 +1,13 @@
+# Go build output
+*.exe
+*.test
+*.out
+
+# SQLite databases (data shouldn't live in git)
+*.db
+
+# Secrets
+.env
+
+# IDE
+.idea/
