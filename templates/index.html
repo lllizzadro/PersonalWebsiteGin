@@ -2,26 +2,26 @@
 <!DOCTYPE html>
 <html lang="en">
 {{template "head" .}}
-<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-50 min-h-screen flex flex-col">
 
     {{template "nav" .}}
 
     <main class="flex-1 max-w-3xl mx-auto px-6 py-12 w-full">
 
         <section class="mb-12">
-            <h1 class="text-4xl font-bold text-slate-900 mb-3">Hi, I'm Louis.</h1>
-            <p class="text-lg text-slate-600 leading-relaxed">
+            <h1 class="text-4xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Hi, I'm Louis.</h1>
+            <p class="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
                 Software developer and animal lover exploring life.
             </p>
         </section>
 
         <section>
-            <h2 class="text-xl font-semibold text-slate-800 mb-5">Projects</h2>
+            <h2 class="text-xl font-semibold text-neutral-800 dark:text-neutral-200 mb-5">Projects</h2>
             <div class="flex flex-col gap-4">
                 {{range .Projects}}
-                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all">
-                    <h3 class="font-semibold text-slate-900 mb-1">{{.Name}}</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">{{.Description}}</p>
+                <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-xl p-5 shadow-sm hover:shadow-md dark:hover:bg-neutral-700 hover:border-purple-200 transition-all">
+                    <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-1">{{.Name}}</h3>
+                    <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">{{.Description}}</p>
                 </div>
                 {{end}}
             </div>
@@ -31,6 +31,7 @@
 
     {{template "footer" .}}
 
+    <script src="/static/js/theme.js" defer></script>
 </body>
 </html>
 {{end}}
